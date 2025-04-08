@@ -34,7 +34,7 @@ const OAuthSuccess = () => {
           });
           
           // Redirect to home or dashboard
-          navigate('/dashboard');
+          navigate('/');
         } catch (error) {
           console.error('Failed to fetch user data:', error.response || error);
           navigate('/login', { 
