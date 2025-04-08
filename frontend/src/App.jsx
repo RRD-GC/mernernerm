@@ -96,7 +96,7 @@ function App() {
             }
           />
           <Route
-            path="/about-page"
+            path="/about"
             element={
               <ProtectedRoute>
                 <About />

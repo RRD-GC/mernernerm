@@ -73,19 +73,19 @@ const UserRecipes = () => {
               <div className="flex justify-between mt-2">
                 <button 
                   onClick={() => navigate('/view-recipe', { state: { recipe } })}
-                  className="text-blue-500 hover:underline"
+                  className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
                 >
                   View
                 </button>
                 <button 
                   onClick={() => navigate('/edit-recipe', { state: { recipe } })}
-                  className="text-green-500 hover:underline"
+                  className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
                 >
                   Edit
                 </button>
                 <button 
                   onClick={() => handleDelete(recipe._id)}
-                  className="text-red-500 hover:underline"
+                  className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 ml-2"
                 >
                   Delete
                 </button>
