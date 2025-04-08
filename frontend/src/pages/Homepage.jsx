@@ -1,5 +1,4 @@
-import React from 'react';
-import NavBar from '../components/NavBar'; // adjust path if needed
+
 
 const Homepage = () => {
   return (

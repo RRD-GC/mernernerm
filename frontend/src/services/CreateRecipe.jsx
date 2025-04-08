@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from '../utils/api';
 
@@ -106,7 +106,7 @@ const CreateRecipe = () => {
       }
   
       // Send the request
-      const res = await axios.post('http://localhost:5000/api/recipes', formData, {
+      await axios.post('http://localhost:5000/api/recipes', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${token}`

@@ -6,9 +6,10 @@ import LoginPage from './pages/LoginPage';
 import Register from './pages/Register';
 import Recipe from './pages/Recipe';
 import UserRecipes from './pages/UserRecipes';
+import About from './pages/Aboutpage';
 
 // components
-import UserProfile from './components/UserProfile';
+import UserProfile from './components/UserProfile'; // Corrected path
 import ViewRecipe from './components/ViewRecipe';
 
 // services
@@ -20,8 +21,7 @@ import ProtectedRoute from '../protected-routes/ProtectedRoute';
 import NavBar from './components/NavBar';
 
 import OAuthSuccess from './components/OAuthSuccess';
-import { AuthProvider } from './context/AuthContext'
-
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
   const location = useLocation();
@@ -33,49 +33,78 @@ function App() {
 
   return (
     <AuthProvider>
-    <>
-      {shouldShowNavBar && <NavBar />}
-      <Routes>
-        <Route path='/' element={
-          <ProtectedRoute>
-            <Homepage />
-          </ProtectedRoute>
-        }/>
-        <Route path="/oauth-success" element={<OAuthSuccess />} />
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/recipe-page' element={
-          <ProtectedRoute>
-            <Recipe />
-          </ProtectedRoute>
-        } />
-        <Route path='/view-recipe' element={
-          <ProtectedRoute>
-            <ViewRecipe />
-          </ProtectedRoute>
-        } />
-        <Route path='/create-recipe' element={
-          <ProtectedRoute>
-            <CreateRecipe />
-          </ProtectedRoute>
-        } />
-        <Route path='/edit-recipe' element={
-          <ProtectedRoute>
-            <EditRecipe />
-          </ProtectedRoute>
-        } />
-        <Route path='/user-profile' element={
-          <ProtectedRoute>
-            <UserProfile />
-          </ProtectedRoute>
-        } />
-         <Route path='/user-recipe' element={
-          <ProtectedRoute>
-            <UserRecipes />
-          </ProtectedRoute>
-        } />
-      </Routes>
-    </>
+      <>
+        {shouldShowNavBar && <NavBar />}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Homepage />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/oauth-success" element={<OAuthSuccess />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/recipe-page"
+            element={
+              <ProtectedRoute>
+                <Recipe />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/view-recipe"
+            element={
+              <ProtectedRoute>
+                <ViewRecipe />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/create-recipe"
+            element={
+              <ProtectedRoute>
+                <CreateRecipe />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/edit-recipe"
+            element={
+              <ProtectedRoute>
+                <EditRecipe />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/user-profile"
+            element={
+              <ProtectedRoute>
+                <UserProfile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/user-recipe"
+            element={
+              <ProtectedRoute>
+                <UserRecipes />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/about-page"
+            element={
+              <ProtectedRoute>
+                <About />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </>
     </AuthProvider>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import api from '../utils/api';
 import { useAuth } from '../context/AuthContext';
@@ -20,7 +20,9 @@ const ViewRecipe = () => {
         try {
           setIsLoading(true);
           const response = await api.get(`/recipes/${id}`);
-          setRecipe(response.data.data);
+          const fetchedRecipe = response.data.data;
+
+          setRecipe(fetchedRecipe); // No need to parse ingredients
         } catch (error) {
           console.error('Error fetching recipe:', error);
           setError('Recipe not found or you do not have permission to view it.');
